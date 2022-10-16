@@ -1,0 +1,97 @@
+
+<!-- Basic CDN Wrapper with a DataTable Component to get your Vuetify project up and running! -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app id="inspire">
+        <v-app-bar app>
+            <v-app-bar-title>Boiler</v-app-bar-title>
+        </v-app-bar>
+      <v-main>
+        <v-text-field
+                  v-model="search"
+                  append-icon="mdi-magnify"
+                  label="Search"
+                  single-line
+                ></v-text-field>
+        <v-data-table
+        :headers="headers"
+        :items="cars"
+        :items-per-page="5"
+        class="elevation-1"></v-data-table>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data() {
+        return{
+            search: "",
+            headers: [
+                {
+                    text: "Cars",
+                    align: "start",
+                    sortable: "false",
+                    value: "name",
+                },
+                { text: "Model", value: "model"},
+                { text: "Weight", value: "weight"},
+                { text: "HP", value: "hp"},
+                { text: "TQ", value: "tq"},
+            ],
+            cars: [
+                {
+                    name: "Porsche",
+                    model: "992 GT3",
+                    weight: 3126.15,
+                    hp: 510,
+                    tq: 346
+                },
+                {
+                    name: "Volkswagen",
+                    model: "Golf R",
+                    weight: 3417,
+                    hp: 315,
+                    tq: 310
+                },
+                {
+                    name: "BMW",
+                    model: "E46 M3",
+                    weight: 3461,
+                    hp: 343-360,
+                    tq: 269
+                },
+                {
+                    name: "Lexus",
+                    model: "IS-500",
+                    weight: 3891,
+                    hp: 472,
+                    tq: 395
+                },
+                {
+                    name: "Chevy",
+                    model: "ZL1",
+                    weight: 3907,
+                    hp: 650,
+                    tq: 650
+                },
+            ]
+        }
+      }
+    })
+  </script>
+</body>
+</html>

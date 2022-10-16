@@ -1,0 +1,45 @@
+<!-- https://vuetifyjs.com/en/components/application/ -->
+<!-- 
+    Application 
+In Vuetify, the v-app component and the app prop on components like v-navigation-drawer, v-app-bar, v-footer help
+bootstrap your application with the proper sizing around your <v-main> component.
+
+The v-app component is REQUIRED for all applications.
+This is the mount point for many of Vuetify's components functionality and ensures proper cross-browser support for certain
+click events.
+
+v-app should only be rendered within your application ONCE.
+-->
+
+
+<!-- 
+    Default Application Markup 
+Example of the default markup for Vuetify. You can place your layout elements anywehre,
+as long as you apply the app property. The key component to making your page content work together with layout elements is v-main.
+The v-main component will be dynamically sized depending upon the structure of your designated app components.
+-->
+
+<v-app>
+    <v-navigation-drawer app>
+      <!-- -->
+    </v-navigation-drawer>
+  
+    <v-app-bar app>
+      <!-- -->
+    </v-app-bar>
+  
+    <!-- Sizes your content based upon application components -->
+    <v-main>
+  
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+  
+        <!-- If using vue-router -->
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+  
+    <v-footer app>
+      <!-- -->
+    </v-footer>
+  </v-app>

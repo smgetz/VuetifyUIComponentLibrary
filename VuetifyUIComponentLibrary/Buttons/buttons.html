@@ -1,0 +1,39 @@
+<!-- https://vuetifyjs.com/en/components/buttons/ -->
+
+<!-- the v-btn component replaces the standart htnml button with a material design theme and options.
+Any color helper class can be used to alter background. -->
+
+<v-btn elevation="2"></v-btn>
+
+<!-- Props -->
+
+<!-- block buttons extend the full width -->
+<template>
+  <v-btn block> Block Button </v-btn>
+</template>
+
+<!-- depressed floating buttons are rounded and usually contain an icon-->
+<v-btn class="mx-2" fab dark small color="primary">
+  <v-icon dark> mdi-minus </v-icon>
+</v-btn>
+
+<v-btn class="mx-2" fab dark small color="pink">
+  <v-icon dark> mdi-heart </v-icon>
+</v-btn>
+
+<!-- outlined buttons inherit their borders from the current color applied -->
+<v-btn class="ma-2" outlined color="indigo"> </v-btn>
+
+<!-- rounded buttons behave the same as reg but have rounded edges -->
+<v-btn rounded color="primary" dark> Rounded Button </v-btn>
+
+<!-- sizing buttons -->
+<v-btn x-small color="secondary" dark> Extra small Button </v-btn>
+
+<v-btn small color="primary" dark> Small Button </v-btn>
+
+<v-btn color="warning" dark> Normal Button </v-btn>
+
+<v-btn color="error" dark large> Large Button </v-btn>
+
+<v-btn x-large color="success" dark> Extra large Button </v-btn>

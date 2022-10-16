@@ -1,0 +1,84 @@
+<!-- https://vuetifyjs.com/en/components/toolbars/ -->
+
+<!-- toolbar is a flexible conatiner. By default toolbar is 64px high on desktop and 56px on mobile.
+Used for displaying a title and items in hamburger menu -->
+
+<v-toolbar elevation="4"></v-toolbar>
+
+<!-- Props -->
+
+<!-- background -->
+<template>
+  <div>
+    <v-toolbar
+      dark
+      prominent
+      src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+    >
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+      <v-toolbar-title>Vuetify</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>mdi-export</v-icon>
+      </v-btn>
+    </v-toolbar>
+  </div></template
+>
+
+<!-- Dense Toolbars -->
+<!-- dense will reduce their height to 48px. -->
+<v-toolbar dense></v-toolbar>
+<v-toolbar-title>Title</v-toolbar-title>
+
+<!-- Extended -->
+<v-toolbar extended></v-toolbar>
+<v-toolbar-title>Title</v-toolbar-title>
+
+<!-- Variations -->
+
+<template>
+  <v-row>
+    <v-col
+      v-for="(bar, i) in bars"
+      :key="i"
+      cols="12"
+      sm="12"
+      md="6"
+      class="my-4"
+    >
+      <v-card color="grey lighten-4" flat height="200px">
+        <v-toolbar :color="bar.class" :dark="bar.dark">
+          <v-app-bar-nav-icon></v-app-bar-nav-icon>
+          <v-toolbar-title>Title</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon>mdi-magnify</v-icon>
+          </v-btn>
+          <v-btn icon>
+            <v-icon>mdi-heart</v-icon>
+          </v-btn>
+          <v-btn icon>
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </v-toolbar>
+      </v-card>
+    </v-col>
+  </v-row>
+</template>
+
+<!-- Script for above variations -->
+<script>
+    export default {
+      data: () => ({
+        bars: [
+          { class: '' },
+          { class: '', dark: true },
+          { class: 'primary', dark: true },
+          { class: 'elevation-0' },
+        ],
+      }),
+    }
+  </script>

@@ -1,0 +1,45 @@
+
+<!-- https://vuetifyjs.com/en/components/date-pickers/ -->
+<!-- Refer to docs for scripts/methods  -->
+
+<!-- v-date-picker -->
+<!-- fully featured date selection component -->
+
+<!-- Usage -->
+<template>
+  <v-row justify="center">
+    <v-date-picker v-model="picker"></v-date-picker>
+  </v-row>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        picker: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+          .toISOString()
+          .substr(0, 10),
+      };
+    },
+  };
+</script>
+
+<!-- Props -->
+<!-- Allowed Dates -->
+<template>
+  <v-row justify="center">
+    <v-date-picker
+      v-model="date"
+      :allowed-dates="allowedDates"
+      class="mt-4"
+      min="2016-06-15"
+      max="2018-03-20"
+    ></v-date-picker>
+  </v-row>
+</template>
+
+<!-- Multiple -->
+<v-date-picker v-model="dates" multiple></v-date-picker>
+
+<!-- Range -->
+<v-date-picker v-model="dates" range></v-date-picker>

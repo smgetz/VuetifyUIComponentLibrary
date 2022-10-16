@@ -1,0 +1,23 @@
+<!-- https://vuetifyjs.com/en/components/paginations/ -->
+
+<!-- v-pagination by default displays the number of pages based on the length of set prop -->
+<template>
+  <div class="text-center">
+    <v-pagination v-model="page" :length="6"></v-pagination>
+  </div>
+</template>
+
+<!-- Props -->
+<!-- Circle -->
+<template>
+  <div class="text-center">
+    <v-pagination v-model="page" :length="4" circle></v-pagination>
+  </div>
+</template>
+
+<!-- total visibile -->
+<template>
+  <div class="text-center">
+    <v-pagination v-model="page" :length="15" :total-visible="7"></v-pagination>
+  </div>
+</template>

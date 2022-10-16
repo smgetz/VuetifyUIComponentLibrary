@@ -1,0 +1,47 @@
+<!-- https://vuetifyjs.com/en/components/cards/ -->
+
+<!-- v-card component is versatile and can be used from a panel to a static image.
+The component has numerous helper components to make markup as easy as possible. -->
+
+<!-- Usage -->
+<v-card elevation="2"></v-card>
+
+<!-- v-card-actions -->
+<!-- container used for placing actions for a card such as v-btn or v-menu. -->
+<v-card-actions>
+  <v-btn @click="">Button</v-btn>
+  <v-btn @click="">Button</v-btn>
+</v-card-actions>
+
+<!-- v-card-subtitle -->
+<!-- default font size and padding for subtitles -->
+<v-card-subtitle>Subtitle</v-card-subtitle>
+
+<!-- v-card-text -->
+<!-- used for text content in a card -->
+<v-card-text>Text</v-card-text>
+
+<!-- v-card-title -->
+<v-card-title>Title</v-card-title>
+
+<!-- Props -->
+
+<!-- outlined -->
+<template>
+  <v-card class="" max-width="" outlined>
+    <v-list-item three-line>
+      <v-list-item-content>
+        <div class="text-overline mb-4">Text</div>
+        <v-list-item-title class="text-h5 mb-1"> Text 2 </v-list-item-title>
+        <v-list-item-subtitle>Text 3</v-list-item-subtitle>
+      </v-list-item-content>
+
+      <v-list-item-avatar tile size="80" color="grey"></v-list-item-avatar>
+    </v-list-item>
+
+    <v-card-actions>
+      <v-btn outlined rounded text> Button </v-btn>
+    </v-card-actions>
+  </v-card>
+</template>
+
