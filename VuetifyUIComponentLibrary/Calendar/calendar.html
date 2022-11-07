@@ -1,3 +1,5 @@
+<!-- https://vuetifyjs.com/en/components/calendars/ -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,10 +25,14 @@
       <v-app>
         <v-main>
           <template>
+            <!-- One row with fill height of the row -->
             <v-row class="fill-height">
               <v-col>
+                <!-- Sheet is like a container, input other components on each sheet -->
                 <v-sheet height="64">
+                  <!-- Toolbar with buttons -->
                   <v-toolbar flat>
+                    <!-- Button to setToday -->
                     <v-btn
                       outlined
                       class="mr-4"
@@ -35,6 +41,7 @@
                     >
                       Today
                     </v-btn>
+                    <!-- Buttons to scroll through selected day/month prev&next -->
                     <v-btn fab text small color="grey darken-2" @click="prev">
                       <v-icon small> mdi-chevron-left </v-icon>
                     </v-btn>
@@ -45,6 +52,7 @@
                       {{ $refs.calendar.title }}
                     </v-toolbar-title>
                     <v-spacer></v-spacer>
+                    <!-- Menu to select view, day, week, month, 4 days -->
                     <v-menu bottom right>
                       <template v-slot:activator="{ on, attrs }">
                         <v-btn
@@ -53,10 +61,12 @@
                           v-bind="attrs"
                           v-on="on"
                         >
+                        <!-- Displays type -->
                           <span>{{ typeToLabel[type] }}</span>
                           <v-icon right> mdi-menu-down </v-icon>
                         </v-btn>
                       </template>
+                      <!-- Changes 'type' property -->
                       <v-list>
                         <v-list-item @click="type = 'day'">
                           <v-list-item-title>Day</v-list-item-title>
@@ -74,6 +84,7 @@
                     </v-menu>
                   </v-toolbar>
                 </v-sheet>
+                <!-- Calendar sheet with multiple props, focus model is todays date, hard coded events, color prop for each event, multiple click events each calling their own method -->
                 <v-sheet height="600">
                   <v-calendar
                     ref="calendar"
